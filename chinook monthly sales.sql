@@ -8,4 +8,4 @@ WITH DF AS (
 	JOIN genres GR on TR.GenreId = GR.GenreId 
 )
 
-SELECT strftime('%m', InvoiceDate) as Month, sum(Sales) as SubTotalSales FROM DF GROUP BY Month ORDER BY Month ASC
+SELECT strftime('%Y', InvoiceDate) as Year, strftime('%m', InvoiceDate) as Month, sum(Sales) as SubTotalSales FROM DF GROUP BY Month, Year ORDER BY Year, Month ASC
